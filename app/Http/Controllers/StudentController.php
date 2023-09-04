@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use App\Models\Flight;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -11,6 +13,12 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $data = Student::all();
+        dd($data);
+ 
+
+
+
         // dd('student controller index ok');
         return view('student.index');
     }
