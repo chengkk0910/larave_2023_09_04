@@ -14,13 +14,10 @@ class StudentController extends Controller
     public function index()
     {
         $data = Student::all();
-        dd($data);
- 
-
-
+        // dd($data);
 
         // dd('student controller index ok');
-        return view('student.index');
+        return view('student.index')->with('data', $data);
     }
 
     /**
@@ -55,7 +52,7 @@ class StudentController extends Controller
         //students/55688/edit
         dd($id);
         $data = "SELECT * FROM table WHERE `id` = '$id'";
-        return view('student.edit')->with('data',$data);
+        return view('student.edit')->with('data', $data);
     }
 
     /**
