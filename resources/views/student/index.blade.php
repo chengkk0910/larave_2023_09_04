@@ -12,8 +12,10 @@
 <body>
 
     <div class="container mt-3">
-        <h2>Basic Table</h2>
-        <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+        <h2>Students Table</h2>
+        <div class="float-end">
+            <a class="btn btn-success" href="{{route('students.create')}}" role="button">add</a>
+        </div>
         <table class="table">
             <thead>
                 <tr>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use App\Models\Flight;
 use App\Models\Student;
+use Illuminate\Support\Facades\Redirect;
+
+// use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -13,7 +16,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $data = Student::all();
+        // $data = Student::all();
+        $data = Student::where('id', '>', 3)->orderBy('id', 'desc')->get();
         // dd($data);
 
         // dd('student controller index ok');
@@ -25,7 +29,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        dd('hello StudentController create');
+        // dd('hello StudentController create');
+        return view('student.create');
     }
 
     /**
@@ -33,7 +38,22 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $data = $request->all();
+        $data = $request->except('_token');
+        // dd($data);
+        // dd($request);
+        $item = new Student;
+        // dd($item);
+
+        $item->name = $data['name'];
+        $item->mobile = $data['mobile'];
+        // dd($item);
+
+
+        $item->save();
+
+        // return redirect('/flights');
+        return redirect()->route('students.index');
     }
 
     /**
