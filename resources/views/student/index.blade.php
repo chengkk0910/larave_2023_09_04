@@ -39,6 +39,14 @@
                                 role="button">修改</a> --}}
                             <a class="btn btn-warning" href="{{ route('students.edit', ['student' => $item['id']]) }}"
                                 role="button">修改</a>
+                            <form action="{{ route('students.destroy', ['student' => $item['id']]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger">Del</button>
+                            </form>
+                            {{-- form --}}
+                            {{-- @csrf --}}
+                            {{-- @method('DELETE') --}}
                         </td>
                     </tr>
                 @endforeach

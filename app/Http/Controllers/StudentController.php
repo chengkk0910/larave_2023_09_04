@@ -82,16 +82,19 @@ class StudentController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * 
      */
     public function update(Request $request, string $id)
     {
-        // dd('update ok');
         $data = $request->except('_token','_method');
-        // dd($data);
 
         $item = Student::find($id);
+
         $item->name = $data['name'];
         $item->mobile = $data['mobile'];
+        // $item->level = 0;
+        // $item->level = 999;
+       
         $item->save();
         return redirect()->route('students.index');
 
@@ -103,7 +106,7 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd("$id del ok");
     }
 
     public function test(){
