@@ -23,6 +23,7 @@
                     <th>NAME</th>
                     <th>MOBILE</th>
                     <th>ADDRESS</th>
+                    <th>LOVE</th>
                     <th>operate</th>
                 </tr>
             </thead>
@@ -35,14 +36,24 @@
                         <td>{{ $item['id'] }}</td>
                         <td>{{ $item['name'] }}</td>
                         <td>{{ $item['mobile'] }}</td>
-                        <td>{{ $item->address['addr'] }}</td>
+                        <td>
+                            @if (!empty($item['address']))
+                                {{ $item['address']['addr'] }}
+                            @endif
+                        </td>
+                        <td>
+                            @foreach ($item['loves'] as $love)
+                                {{ $love['name'] }}
+                            @endforeach
+                        </td>
                         <td>
                             {{-- <a class="btn btn-warning" href="{{ route('students.edit', $item['id']}}"
                                 role="button">修改</a> --}}
-                            
+
                             <form action="{{ route('students.destroy', ['student' => $item['id']]) }}" method="post">
-                                <a class="btn btn-warning" href="{{ route('students.edit', ['student' => $item['id']]) }}"
-                                    role="button">修改</a>                                
+                                <a class="btn btn-warning"
+                                    href="{{ route('students.edit', ['student' => $item['id']]) }}"
+                                    role="button">修改</a>
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="d-inline btn btn-danger">Del</button>

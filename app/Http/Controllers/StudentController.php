@@ -22,7 +22,21 @@ class StudentController extends Controller
         // dd($url);
         // $phone = User::find(1)->phone;
         // $data = Student::find(2)->address;
-        $data = Student::all();
+        $data = Student::with(['address','loves'])->get();
+        // dd($data);
+        // dd($data);
+        // $data = Student::with('address')->get();
+        // $users = User::with('podcasts')->get();
+        // $data = Student::find(2)->loves;
+        // dd($data);
+ 
+        // foreach ($data as $key => $value) {
+        //     dump ("$value->address");
+        // }
+
+        
+
+        // $data = Student::get();
         // dd($data);
         // $data = Student::where('id', '>', 3)->orderBy('id', 'desc')->get();
         // dd($data);
