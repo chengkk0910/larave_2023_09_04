@@ -73,9 +73,10 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //students/55688/edit
-        dd($id);
-        $data = "SELECT * FROM table WHERE `id` = '$id'";
+ 
+        $data = Student::find($id);
+
+       
         return view('student.edit')->with('data', $data);
     }
 
@@ -84,7 +85,17 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd('update ok');
+        $data = $request->except('_token','_method');
+        // dd($data);
+
+        $item = Student::find($id);
+        $item->name = $data['name'];
+        $item->mobile = $data['mobile'];
+        $item->save();
+        return redirect()->route('students.index');
+
+        // dd($item);
     }
 
     /**

@@ -35,6 +35,8 @@
                         <td>{{ $item['name'] }}</td>
                         <td>{{ $item['mobile'] }}</td>
                         <td>
+                            {{-- <a class="btn btn-warning" href="{{ route('students.edit', $item['id']}}"
+                                role="button">修改</a> --}}
                             <a class="btn btn-warning" href="{{ route('students.edit', ['student' => $item['id']]) }}"
                                 role="button">修改</a>
                         </td>
