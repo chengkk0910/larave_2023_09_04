@@ -21,8 +21,9 @@ class StudentController extends Controller
         // $url = route('students.edit', ['student' => 1]);
         // dd($url);
         // $phone = User::find(1)->phone;
-        $data = Student::find(2)->address;
-        dd($data);
+        // $data = Student::find(2)->address;
+        $data = Student::all();
+        // dd($data);
         // $data = Student::where('id', '>', 3)->orderBy('id', 'desc')->get();
         // dd($data);
 

@@ -22,6 +22,7 @@
                     <th>ID</th>
                     <th>NAME</th>
                     <th>MOBILE</th>
+                    <th>ADDRESS</th>
                     <th>operate</th>
                 </tr>
             </thead>
@@ -34,6 +35,7 @@
                         <td>{{ $item['id'] }}</td>
                         <td>{{ $item['name'] }}</td>
                         <td>{{ $item['mobile'] }}</td>
+                        <td>{{ $item->address['addr'] }}</td>
                         <td>
                             {{-- <a class="btn btn-warning" href="{{ route('students.edit', $item['id']}}"
                                 role="button">修改</a> --}}

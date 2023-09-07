@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
+
 class Student extends Model
 {
    
@@ -20,7 +21,7 @@ class Student extends Model
      */
     public function address(): HasOne
     {
-        // return $this->hasOne(Address::class);
-        return $this->hasOne(Address::class, 'student_id', 'id');
+        return $this->hasOne(Address::class);
+        // return $this->hasOne(Address::class, 'student_id', 'id');
     }
 }
