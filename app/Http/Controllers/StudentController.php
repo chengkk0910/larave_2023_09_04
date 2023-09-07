@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use App\Models\Flight;
 use App\Models\Student;
+use App\Models\Address;
 use Illuminate\Support\Facades\Redirect;
 
 // use App\Models\Student;
@@ -19,8 +20,9 @@ class StudentController extends Controller
 
         // $url = route('students.edit', ['student' => 1]);
         // dd($url);
-
-        $data = Student::all();
+        // $phone = User::find(1)->phone;
+        $data = Student::find(2)->address;
+        dd($data);
         // $data = Student::where('id', '>', 3)->orderBy('id', 'desc')->get();
         // dd($data);
 
