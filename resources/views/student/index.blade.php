@@ -37,12 +37,13 @@
                         <td>
                             {{-- <a class="btn btn-warning" href="{{ route('students.edit', $item['id']}}"
                                 role="button">修改</a> --}}
-                            <a class="btn btn-warning" href="{{ route('students.edit', ['student' => $item['id']]) }}"
-                                role="button">修改</a>
+                            
                             <form action="{{ route('students.destroy', ['student' => $item['id']]) }}" method="post">
+                                <a class="btn btn-warning" href="{{ route('students.edit', ['student' => $item['id']]) }}"
+                                    role="button">修改</a>                                
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">Del</button>
+                                <button type="submit" class="d-inline btn btn-danger">Del</button>
                             </form>
                             {{-- form --}}
                             {{-- @csrf --}}

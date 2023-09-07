@@ -106,7 +106,10 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        dd("$id del ok");
+        // dd("$id del ok");
+        $data = Student::find($id);
+        $data->delete();
+        return redirect()->route('students.index');
     }
 
     public function test(){
