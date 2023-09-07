@@ -14,7 +14,7 @@
     <div class="container mt-3">
         <h2>Students Table</h2>
         <div class="float-end">
-            <a class="btn btn-success" href="{{route('students.create')}}" role="button">add</a>
+            <a class="btn btn-success" href="{{ route('students.create') }}" role="button">add</a>
         </div>
         <table class="table">
             <thead>
@@ -22,6 +22,7 @@
                     <th>ID</th>
                     <th>NAME</th>
                     <th>MOBILE</th>
+                    <th>operate</th>
                 </tr>
             </thead>
             @php
@@ -33,6 +34,10 @@
                         <td>{{ $item['id'] }}</td>
                         <td>{{ $item['name'] }}</td>
                         <td>{{ $item['mobile'] }}</td>
+                        <td>
+                            <a class="btn btn-warning" href="{{ route('students.edit', ['student' => $item['id']]) }}"
+                                role="button">修改</a>
+                        </td>
                     </tr>
                 @endforeach
 

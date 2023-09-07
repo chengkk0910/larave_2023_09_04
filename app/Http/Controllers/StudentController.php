@@ -16,8 +16,12 @@ class StudentController extends Controller
      */
     public function index()
     {
-        // $data = Student::all();
-        $data = Student::where('id', '>', 3)->orderBy('id', 'desc')->get();
+
+        // $url = route('students.edit', ['student' => 1]);
+        // dd($url);
+
+        $data = Student::all();
+        // $data = Student::where('id', '>', 3)->orderBy('id', 'desc')->get();
         // dd($data);
 
         // dd('student controller index ok');
@@ -89,5 +93,9 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function test(){
+        dd('hello studentController test');
     }
 }
