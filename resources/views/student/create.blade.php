@@ -22,6 +22,8 @@
                     <tr>
                         <th>NAME</th>
                         <th>MOBILE</th>
+                        <th>ADDRESS</th>
+                        <th>LOVE</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,9 +34,15 @@
                         <td>
                             <input type="text" name="mobile" id="">
                         </td>
+                        <td>
+                            <input type="text" name="address" id="">
+                        </td>
+                        <td>
+                            <input type="text" name="love" id="">
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td colspan="4">
                             <button type="submit">submit</button>
                         </td>
                     </tr>

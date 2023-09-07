@@ -15,28 +15,34 @@
         <h2>Students Table - Edit</h2>
         <br>
 
-        @php 
+        @php
             // dd($data);
         @endphp
 
         <table class="table">
-            <form action="{{route('students.update', ['student' => $data['id']]);}}" method="post">
+            <form action="{{ route('students.update', ['student' => $data['id']]) }}" method="post">
                 @csrf
                 @method('put')
                 {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}" /> --}}
                 <thead>
                     <tr>
                         <th>NAME</th>
-                        <th>MOBILE</th> 
+                        <th>MOBILE</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td width="20%">
-                            <input type="text" name="name" id="" value="{{$data['name']}}">
+                            <input type="text" name="name" id="" value="{{ $data['name'] }}">
                         </td>
                         <td>
-                            <input type="text" name="mobile" id="" value="{{$data['mobile']}}">
+                            <input type="text" name="mobile" id="" value="{{ $data['mobile'] }}">
+                        </td>
+                        <td>
+                            <input type="text" name="address" id="" value="{{ $data['address']['addr'] ?? ''}}">
+                        </td>
+                        <td>
+                            <input type="text" name="love" id="" value="{{ $data['myText'] }}">
                         </td>
                     </tr>
                     <tr>
